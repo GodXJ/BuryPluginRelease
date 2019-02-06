@@ -1,0 +1,40 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+
+dependencies {
+    //gradle sdk
+    compile gradleApi()
+    //groovy sdk
+    compile localGroovy()
+
+    compile 'com.android.tools.build:gradle:3.2.1'
+    compile 'commons-io:commons-io:2.5'
+    //ASM依赖
+    //ASM相关
+    implementation 'org.ow2.asm:asm:5.1'
+    implementation 'org.ow2.asm:asm-util:5.1'
+    implementation 'org.ow2.asm:asm-commons:5.1'
+    //json转换工具
+    compile group: 'org.json', name: 'json', version: '20180813'
+
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+//以上都为固定写法
+
+//group和version
+group='com.godxj.plugin'
+version='1.0.0'
+
+//打包到本地或者远程Maven库
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: uri('../repo'))
+        }
+    }
+}
