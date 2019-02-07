@@ -17,3 +17,5 @@
 **如果不做处理，并且startPlugin为true，plugin任然起作用但是回调的类将是默认的类；点击事件处理默认类为`com.godxj.plugin.SimpleClickProxy`, 页面停留事件处理默认类为`com.godxj.plugin.SimpleTimeProxy`** 
   * 1.自定义处理点击回调，必须定义类并继承`com.godxj.plugin.imp.AbstractOnClickProxy`,抽象方法`clickProxy`作为所有点击事件处理回调的出口，方法参数将回调给用户几个基本信息，具体可查看`BuryClickInfo`该类的成员变量
   * 2.自定义处理页面停留回调，必须定义类并集成`com.godxj.plugin.imp.AbstractTimeProxy`,抽象方法`stayTime`作为页面停留的回调，该方法会被调用多次，每次离开页面都将会被调用；抽象方法`surviveTime`作为页面存活回调，该方法只会被调用一次，当页面关闭时会被调用；
+# 实现原理
+可直接查看我的个人blog，由于时间问题，可能不会有分析的相关，毕竟本人很懒 `http://www.godxj.com/blog` 进去你会发现，连blog都是新鲜的
